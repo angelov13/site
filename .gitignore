@@ -92,6 +92,9 @@ ENV/
 
 #archivos a excluir
 lunaprogrammers/*
+node_modules/*
+docs/Documentacion/*
+package.json
 bin/*.*
 bin/
 bin/*
