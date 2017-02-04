@@ -1,16 +1,23 @@
-# Definicio de Aplicaciones de Flask
-# Aqui iran todas las aplicaciones
-# ====================================
+# Nueva Instancia de Flask llamada blog
 from flask import Flask
-
-# Creo una nueva app llamada blog
 blog = Flask(__name__)
 
-# Importo del modulo de configuraciones la app de Blog
-from configs import BlogDev,BlogProduction
+#from configs import BlogProduction
+#blog.config.from_object(BlogProduction)
 
-# Configuro mi app para que tome estas configuraciones:
+from configs import BlogDev
 blog.config.from_object(BlogDev)
 
-#Importando las vistas !importante
+from models import db
+from models import
+
 import views
+
+
+# Iniciando Servidor
+if __name__=='__main__':
+	db.init_app(blog)
+	with blog.app_context():
+		db.create_all(blog)
+	blog.run(port=BlogDev.PORT)
+	#blog.run(port=BlogProduction.PORT)
