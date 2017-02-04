@@ -1,0 +1,9 @@
+{% macro blog_message(header) %}
+	<div id="header">
+		<figure>
+			<img src="{{ url_for('static', filename=header.img)}}" alt="{{ header.imgDescription }}">
+		</figure>
+		<h1>{{ header.title }}</h1>
+		<p>{{ header.text }}</p>
+	</div>
+{% endmacro %}

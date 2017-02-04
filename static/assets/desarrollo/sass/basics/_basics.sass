@@ -1,0 +1,65 @@
+body
+  background-color: $bg_white
+::selection
+  color: $white
+  background-color: $pri
+.container-sm,
+.container-md,
+.container-lg
+	display: table
+	width: 100%
+	margin: 0 auto
+	padding: 0 $padding-sm
+.container-sm
+	max-width: $container-sm
+.container-md
+	max-width: $container-md
+.container-lg
+	max-width: $container-lg
+.center
+	text-align: center
+.clear
+	display: table
+	clear: both
+	content: ''
+.facebook, .facebook:focus
+	background-color: $facebook
+	background: linear-gradient(rgba($facebook,0.9),darken($facebook,5%))
+	color: $white
+	&:hover
+		background-color: darken($facebook, 5%)
+
+	&:active
+		background-color: darken($facebook, 7%)
+.twitter, .twitter:focus
+	background-color: $twitter
+	background: linear-gradient(rgba($twitter,0.9),darken($twitter,5%))
+	color: $white
+	&:hover
+		background-color: darken($twitter, 5%)
+	&:active
+		background-color: darken($twitter, 7%)
+.linkedin, .linkedin:focus
+	background-color: $linkedin
+	background: linear-gradient(rgba($linkedin,0.9),darken($linkedin,5%))
+	color: $white
+	&:hover
+		background-color: darken($linkedin, 5%)
+	&:active
+		background-color: darken($linkedin, 7%)
+.google, .google:focus
+	background-color: $google
+	background: linear-gradient(rgba($google,0.9),darken($google,5%))
+	color: $white
+	&:hover
+		background-color: darken($google, 5%)
+	&:active
+		background-color: darken($google, 7%)
+.primary
+	background-color: $pri
+	background: linear-gradient(rgba($pri,0.9),$pri)
+	color: $white !important
+	&:hover
+		background-color: darken($pri, 4%)
+	&:active
+		background-color: darken($pri, 6%)

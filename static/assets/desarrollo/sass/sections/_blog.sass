@@ -1,0 +1,93 @@
+#blog
+	display: table
+	clear: both
+	line-height: 1.3
+	font-family: $open-sans
+	margin: $logo-height 0px $margin-xlg 0px
+	position: relative
+	#header
+		margin: 0px
+		margin-top: 120px
+		margin-bottom: $margin-md
+		width: 100%
+		padding: $padding-md
+		display: block
+		border-bottom: none
+		box-shadow: 0px 2px 5px darken($gray,30%)
+		background-color: lighten($pri,10%)
+		background: linear-gradient(lighten($pri,12%),lighten($pri, 5%))
+		figure
+			margin: 0
+			width: 150px
+			height: 150px
+			border-radius: 50%
+			overflow: hidden
+			position: absolute
+			left: 50%
+			top: 45px
+			border: 3px solid $white
+			// transform: translateY(50%)
+			transform: translateX(-50%)
+			img
+				width: 100%
+				height: 100%
+		h1,h2
+			font-size: 1.35rem
+			margin-top: 65px
+			color: lighten($gray, 10%)
+			text-align: center
+		p
+			font-size: 1.1rem
+			color: lighten($gray, 10%)
+			margin: 0 auto
+			margin-bottom: $margin-md
+			max-width: 650px
+	article
+		float: left
+		width: 45%
+		margin: $padding-md 2.5%
+		transition: 0.3s all
+		box-shadow: 0px 2px 2px darken($gray,30%)
+		figure
+			margin: 0
+			padding: 0
+			width: 100%
+			img
+				width: 100%
+				padding: 0
+				height: auto
+		.details
+			width: 100%
+			margin: 0
+			padding: $padding-xs
+			padding-top: $padding-md
+			background-color: $white
+			a
+				text-decoration: none
+				color: darken($linkedin,2%)
+				transition: 0.2s all
+				&:hover
+					color: darken($linkedin,7%)
+				h2
+					margin-bottom: $margin-sm
+					font-size: 1.15rem
+					font-weight: 600
+					text-align: center
+			p
+				border-top: 1px solid #ccc
+				padding-top: $padding-xs
+				color: $dark_gray
+				font-size: 0.95rem
+		footer
+			padding: $padding-xs $padding-sm
+			border-top: 1px solid #ccc
+			a
+				transition: 0.2s all
+				color: $orange
+				font-size: 1rem
+				cursor: pointer
+				text-decoration: none
+				outline: none
+				&:hover
+					color: darken($orange, 7%)
+					border-bottom: 1px dotted $orange

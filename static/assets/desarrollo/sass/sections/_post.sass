@@ -1,0 +1,136 @@
+#articulo
+	word-wrap: break-word
+	font-family: $open_sans
+	padding: $padding-xlg $padding-sm
+	font-size: 1.1rem
+	line-height: 1.5
+	figure.imagen
+		width: 100%
+		height: auto
+		margin: $margin-xs 0
+		float: left
+		padding: 0
+		transition: 0.4s all
+		img
+			border-radius: 3px
+			width: 100%
+			margin: 0
+			padding: 0
+			height: auto
+		figcaption
+			text-align: center
+			color: darken($dark_gray,18%)
+			word-wrap: break-word
+			font-size: 0.9rem
+	div.dos-imagenes,
+	div.tres-imagenes,
+	div.cuatro-imagenes
+		width: 100%
+		display: table
+	.date
+		color: $dark_gray2
+		font-size: 1rem
+		display: block
+		padding-left: $padding-xs
+		&:before
+			content: '\e930'
+			margin-right: $margin-sm
+			color: $black
+			+icon()
+	ol > li
+		list-style-position: inside
+		margin-left: $margin-md
+		margin-bottom: $margin-sm
+	ul > li
+		list-style: none
+		list-style-position: inside
+		margin-bottom: $margin-xs
+		margin-left: $margin-md
+		&:before
+			content: '\ea52'
+			+icon()
+			color: $sec
+			margin-right: $margin-xs
+	a
+		color: darken($orange,5%)
+		text-decoration: none
+		cursor: pointer
+		transition: 0.2s all
+		&:hover
+			color: darken($orange,10%)
+			border-bottom: 1px dotted darken($orange,8%)
+	pre,cite,code
+		font-size: 1rem
+		line-height: 1.5
+		word-wrap: break-word
+	b,strong
+		border-bottom: 1px dotted darken($gray,50%)
+		color: $dark_gray
+	mark
+		background-color: darken($orange,6%)
+		color: $white
+		padding: 0px 5px
+		*
+			color: $white
+	blockquote
+		text-align: left
+		position: relative
+		line-height: 1.5
+		font-size: 1.2rem
+		padding: $padding-xs
+		padding-left: $padding-lg
+		padding-bottom: $padding-md
+		border-left: 3px solid rgba($pri, 0.8)
+		footer
+			display: inline-block
+			position: absolute
+			bottom: -5px
+			right: 7%
+			color: darken($gray, 60%)
+			font-style: italic
+			font-size: 1rem
+		&:after
+			content: '\e978'
+			margin-left: $margin-xs
+			color: $dark_gray
+			+icon()
+		&:before
+			content: '\e977'
+			color: $dark_gray
+			margin-right: $margin-xs
+			+icon()
+	p, div > p
+		color: darken($dark_gray,18%)
+	h1,h2,h3,h4,h5,h6
+		color: darken($dark_gray2,6%) !important
+		line-height: 1.2
+	h1,h2,h3,h4,h5,h6,p,ul,ol,dl,pre,code,blockquote,q,div
+		margin-bottom: $padding-sm
+		margin-top: $margin-sm
+	h1
+		font-size: 1.4rem
+	h2
+		font-size: 1.3rem
+	h3
+		font-size: 1.2rem
+	h4
+		font-size: 1.1rem
+	h5
+		font-size: 1rem
+	h6
+		font-size: 0.9rem
+.table
+	border-collapse: collapse
+	width: 100%
+	font-size: 1rem
+	margin: 0
+	margin-bottom: $margin-lg
+	margin-top: $margin-md
+	caption
+		font-weight: bolder
+		padding: $padding-xs 0px
+	tr,caption
+		border-bottom: 1px solid darken($gray,20%)
+	td,th
+		text-align: left
+		padding: $padding-xs $padding-sm

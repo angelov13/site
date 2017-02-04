@@ -1,0 +1,22 @@
+{% macro compartir(redes,newslatter,site) %}
+	<section id="compartir">
+		<div class="redes-sociales">
+		<h3>{{ redes.title }}</h3>
+			<a href="javascript: void(0);" class="facebook" onclick="var url='http://www.facebook.com/sharer.php?u='+String(encodeURIComponent(window.location.href));window.open(url,'Compartir Articulo', 'toolbar=0, status=0, width=650, height=450');">
+				<span class="icon-facebook"></span>Facebook</a>
+			<a href="javascript: void(0);" class="twitter" onclick="var url='http://twitter.com/home?status='+String(encodeURIComponent(window.location.href));window.open(url,'Compartir Articulo', 'toolbar=0, status=0, width=650, height=450');">
+				<span class="icon-twitter"></span>Twitter</a>
+			<a href="javascript: void(0);" class="google" onclick="var url='https://plus.google.com/share?url='+String(encodeURIComponent(window.location.href));window.open(url,'Compartir Articulo', 'toolbar=0, status=0, width=650, height=450');">
+				<span class="icon-google-plus"></span>Google <b>+</b></a>
+			<a href="javascript: void(0);" class="linkedin" onclick="var url='https://www.linkedin.com/shareArticle?url='+String(encodeURIComponent(window.location.href));window.open(url,'Compartir Articulo', 'toolbar=0, status=0, width=650, height=450');">
+				<span class="icon-linkedin"></span>LinkedIn</a>
+		</div>
+		<div id="newsletter">
+			<h3>{{ newslatter.title }}</h3>
+			<input class="input" type="text" name="nombre" placeholder="{{ newslatter.nameText }}">
+			<input class="input" type="mail" name="correo" placeholder="{{ newslatter.mailText }}">
+			<button class="enviar primary">{{ newslatter.buttonText }}</button>
+			<p><span class="icon-lock"></span>{{ newslatter.textFooter }}</p>
+		</div>
+	</section>
+{% endmacro %}

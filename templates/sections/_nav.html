@@ -1,0 +1,14 @@
+{% macro nav(menu,site) %}
+	<nav>
+		<div id="menu-responsive">
+			<a href="{{ site.url }}"><img class="logo" src="{{ url_for('static', filename=menu.logoImg) }}" alt="{{ menu.logoDescription }}"></a>
+			<input type="checkbox" id="toggle-menu">
+			<label for="toggle-menu"><span class="icon-menu"></span></label>
+		</div>
+		<ul id="menu">
+		{% for item in menu.list %}
+			<li><a {{ item.class }} href="{{ item.url }}">{{ item.text }}</a></li>
+		{% endfor %}
+		</ul>
+	</nav>
+{% endmacro %}

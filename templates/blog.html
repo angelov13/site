@@ -1,0 +1,69 @@
+{% extends "base/base.html" %}
+
+{% from 'plugins/_seo.html' import seo %}
+{% from 'plugins/_compartir.html' import compartir %}
+{% from 'plugins/_blog_header.html' import blog_message %}
+{% from 'plugins/_fonts.html' import fonts %}
+{% from 'plugins/_meta.html' import metaTags %}
+{% from 'plugins/_analytics.html' import analytics %}
+{% from 'plugins/_html_atributes.html' import h_atributes %}
+{% from 'plugins/_body_atributes.html' import b_atributes %}
+{% from 'sections/_nav.html' import nav %}
+{% from "sections/_footer.html" import footer %}
+
+
+{% block html_atributes %}
+	{{ h_atributes(site) }}
+{% endblock %}
+
+{% block seo %}
+	{{ seo() }}
+{% endblock %}
+
+{% block meta %}
+	{{ metaTags('Blog',site) }}
+{% endblock %}
+
+{% block links_header %}
+	{{ fonts() }}
+	{{ analytics() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/final/css/blog.min.css') }}">
+{% endblock %}
+
+{% block content %}
+<header>
+	{{ nav(site.menu,site) }}
+</header>
+<main class="container-md">
+	<section id="blog">
+		{{ blog_message(site.blogHeader) }}
+		{% for articulo in articulos %}
+			<article>
+				<figure>
+					<a href="{{ articulo.url }}">
+						<img src="{{ url_for('static', filename=articulo.img) }}" alt="{{ articulo.imgDescription }}">
+					</a>
+				</figure>
+				<div class="details">
+					<a href="{{ articulo.url }}">
+						<h2>
+						{{ articulo.title }}
+						</h2>
+					</a>
+						<p>{{ articulo.description }}</p>
+				</div>
+				<footer>
+					<a href="{{ articulo.url }}">Leer mas...</a>
+				</footer>
+			</article>
+		{% endfor %}
+	</section>
+{{ compartir(site.redes,site.newslatter,site) }}
+</main>
+
+{{ footer(site.footer.widgets, site.footer.servicios, site) }}
+{% endblock %}
+
+{% block links_footer %}
+<script src="{{ url_for('static', filename='assets/final/js/app.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,83 @@
+@import _base_responsive
+@media screen and (max-width: $mini-mobil)
+	.table
+		font-size: 0.9rem
+	.date
+		font-size: 0.9rem
+	#articulo
+		padding: $padding-lg 0
+		font-size: 1rem
+		line-height: 1.35rem
+	
+		h1
+			font-size: 1.3rem
+		h2
+			font-size: 1.2rem
+		h3
+			font-size: 1.1rem
+		h4
+			font-size: 1rem
+		h5
+			font-size: 0.8rem
+		h6
+			font-size: 0.7rem
+		blockquote
+			font-size: 1rem
+			line-height: 1.35
+			footer
+				font-size: 0.9rem
+		h1,h2,h3,h4,h5,h6,p,ul,ol,dl,pre,code,blockquote,q
+			margin-bottom: $margin-sm
+			margin-top: $margin-sm
+	#banner-top
+		h1
+			font-size: 1rem
+	.redes-sociales
+		h3
+			font-size: 1.1rem
+			margin-bottom: $margin-xs
+		a
+			font-size: 0.7rem
+			margin-right: 4px
+			padding: 6px
+
+@media screen and (min-width: $tablet)
+	#articulo
+		figure.imagen
+			figcaption
+				font-size: 1rem
+		div.dos-imagenes > figure.imagen,
+		div.tres-imagenes > figure.imagen,
+		div.cuatro-imagenes > figure.imagen
+			width: 50%
+			padding-right: $margin-sm
+	#newsletter
+		padding: $padding-xs $padding-xlg
+		text-align: center
+		.input,.enviar
+			margin-right: $margin-xs
+			width: 31%
+			max-width: 31%
+			display: inline-block
+	#compartir
+		border: 4px dashed $linkedin
+	.redes-sociales
+		a
+			margin: 8px
+			padding: $padding-sm $padding-lg
+			font-size: 1rem
+			span:before
+				top: 3px
+				font-size: 1.25rem
+	#banner-top
+		h1
+			font-size: 1.5rem
+@media screen and (min-width: $pc)
+	#articulo
+		div.tres-imagenes > figure.imagen
+			width: 33.3333%
+		div.cuatro-imagenes > figure.imagen
+			width: 25%
+	#banner-top
+		h1
+			font-size: 1.65rem

@@ -1,0 +1,60 @@
+{% extends "base/base.html" %}
+
+{% from "plugins/_seo.html" import seo %}
+{% from "plugins/_compartir.html" import compartir %}
+{% from "plugins/_fonts.html" import fonts %}
+{% from "plugins/_banner.html" import banner %}
+{% from 'plugins/_meta.html' import metaTags %}
+{% from 'plugins/_analytics.html' import analytics %}
+{% from "plugins/_html_atributes.html" import h_atributes %}
+{% from "plugins/_body_atributes.html" import b_atributes %}
+{% from "sections/_nav.html" import nav %}
+{% from "sections/_footer.html" import footer %}
+
+{% block html_atributes %}
+	{{ h_atributes(site) }}
+{% endblock %}
+
+{% block seo %}
+	{{ seo() }}
+{% endblock %}
+
+{% block meta %}
+	{{ metaTags('Blog',site) }}
+{% endblock %}
+
+{% block links_header %}
+		{{ fonts() }}
+	{{ analytics() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/final/css/post.min.css') }}">
+{% endblock %}
+
+{% block content %}
+	<header>
+		{{ nav(site.menu,site) }}
+{# 		{% banner() %} #}
+	</header>
+		
+	<main class="container-md">
+		<!-- Contenido del Articulo -->
+		<section>
+			<article id="articulo">
+				<h2>{{ articulo.title }}</h2>
+				{# <span class="date">Publicado por <a href="{{ articulo.urlAutor }}">{{ articulo.autor }}</a> en  #}
+				{# {% for item in articulo.category %}
+					<a href="{{ item.url }}">{{ item }}</a>
+				{% endfor %} #}
+				</span>
+				{{ articulo.body }}
+			</article>
+		</section>
+		
+	{{ compartir(site.redes,site.newslatter,site) }}
+	<!-- ZONA DE COMENTARIOS -->
+	</main>
+	{{ footer(site.footer.widgets, site.footer.servicios, site) }}
+{% endblock %}
+
+{% block links_footer %}
+	<script src="{{ url_for('static', filename='assets/final/app.js') }}"></script>
+{% endblock %}

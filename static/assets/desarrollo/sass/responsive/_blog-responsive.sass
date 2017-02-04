@@ -1,0 +1,48 @@
+@import _base_responsive
+@media screen and (max-width: $mini-mobil)
+	.redes-sociales
+		h3
+			font-size: 1.1rem
+			margin-bottom: $margin-xs
+		a
+			font-size: 0.7rem
+			margin-right: 4px
+			padding: 6px
+	#blog
+		article
+			.details
+				a
+					h2,h3
+						font-size: 1rem
+				p
+					font-size: 0.8
+@media screen and (max-width: $mobil)
+	#blog
+		article
+			width: 95%
+
+@media screen and (min-width: $tablet)
+	#newsletter
+		padding: $padding-xs $padding-xlg
+		text-align: center
+		.input,.enviar
+			margin-right: $margin-xs
+			width: 31%
+			max-width: 31%
+			display: inline-block
+	#compartir
+		border: 4px dashed $linkedin
+	.redes-sociales
+		a
+			margin: 8px
+			padding: $padding-sm $padding-lg
+			font-size: 1rem
+			span:before
+				top: 3px
+				font-size: 1.25rem
+@media screen and (min-width: $pc)
+	#blog
+		article
+			width: 30%
+			margin: $padding-md 1.5%
+// // @media screen and (min-width: $large-pc)

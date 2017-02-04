@@ -1,0 +1,54 @@
+nav
+	.active
+		color: rgba($orange, 0.95)
+	width: 100%
+	box-shadow: none
+	display: table
+	#menu-responsive
+		position: fixed
+		z-index: 10000
+		display: table
+		box-shadow: 0px 0px 5px $dark_gray
+		padding: 0 $padding-sm
+		width: 100%
+		background-color: $white
+		.logo
+			height: $logo-height
+			float: left
+		#toggle-menu
+			display: none
+			&:checked ~ label
+				color: rgba($dark_gray,1)
+			&:checked ~ label > span:before
+				content: '\ea0f'
+		label
+			transition: all 0.85s
+			float: right
+			color: $pri
+			position: relative
+			cursor: pointer
+			top: 15px
+			span:before
+				font-size: 30px 
+	ul
+		z-index: 9999
+		list-style: none
+		width: 80%
+		position: fixed
+		top: -100%
+		right: 10%
+		transition: all 0.7s ease
+		background-color: rgba($pri, 0.92)
+		li
+			display: block
+			border-bottom: 1px dashed rgba($white, 0.7)
+			a
+				padding: $padding-sm 50px
+				text-decoration: none
+				font-weight: 600
+				display: block
+				color: rgba($white, 0.85)
+				transition: 0.4s all
+				&:hover
+					padding-left: 70px
+					background-color: $sec

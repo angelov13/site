@@ -1,0 +1,91 @@
+@media screen and (max-width: $mini-mobil)
+	#widgets
+		#nosotros,
+		#porque-nosotros,
+		#servicios
+			padding: $padding-xs
+		h3
+			font-size: 1.12rem
+			margin-bottom: $margin-sm
+		p
+			line-height: 1.3
+	#copyright
+		#copy
+			font-size: 1rem
+		.sociales
+			display: none
+@media screen and (max-width: $mobil)
+	nav
+		ul
+			li
+				font-size: 0.9rem
+@media screen and (min-width: $tablet)
+	#widgets
+		p
+			text-align: left
+		#nosotros
+			width: 100%
+		#porque-nosotros,
+		#servicios
+			width: 50%
+	#copyright
+		#copy,
+		.sociales
+			width: 60%
+			padding: $padding-md $padding-sm
+			display: inline-block
+			text-align: left
+			font-size: 1.2rem
+		.sociales
+			width: 40%
+			text-align: right
+	nav
+		#menu-responsive
+			padding-left: $padding-lg
+			#toggle-menu ~ label
+				display: none
+		ul
+			margin-top: 0
+			z-index: 10000
+			position: fixed
+			right: $padding-lg
+			top: 0%
+			font-size: 0rem
+			height: auto
+			width: auto
+			max-width: auto
+			transition: none
+			background-color: $white
+			li
+				font-size: 1rem
+				display: inline-block
+				border: none
+				a
+					padding: 0px 13px
+					line-height: 60px
+					color: rgba($dark_gray, 0.92)
+					&:hover
+						animation: 1s menuWeb 1
+						color: rgba($orange, 0.95)
+						padding-left: 13px
+						background-color: transparent
+@media screen and (min-width: $pc)
+	#widgets
+		p,h3
+			text-align: left
+		#nosotros
+			width: 40%
+		#porque-nosotros,
+		#servicios
+			width: 30%
+	nav
+		ul
+			right: $padding-lg + 50
+		#menu-responsive
+			padding-left: $padding-lg + 30
+@media screen and (min-width: $large-pc)
+	nav
+		ul
+			right: $padding-lg + 80
+		#menu-responsive
+			padding-left: $padding-lg + 60

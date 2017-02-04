@@ -1,0 +1,6 @@
+{% macro banner(banner) %}
+<div id="banner-top">
+	<img src="{{ url_for('static', filename=banner.img) }}" alt="{{ banner.img_escription }}">
+	<h1>{{ banner.title }}</h1>
+</div>
+{% endmacro %}

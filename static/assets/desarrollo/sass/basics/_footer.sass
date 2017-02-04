@@ -1,0 +1,70 @@
+#footer
+	display: block
+	width: 100%
+	color: $gray
+#widgets
+	background-color: $dark_gray2
+	background: linear-gradient(lighten($dark_gray2,10%),$dark_gray2)
+	padding: $padding-md 0px
+	#nosotros,
+	#porque-nosotros,
+	#servicios
+		transition: 0.3s all 
+		padding: $padding-sm
+		display: block
+		float: left
+	#servicios
+		h3
+			text-align: left
+	p,li,a
+		font-size: 1rem
+		line-height: 1.4
+		font-family: $open_sans
+		color: $gray
+		text-decoration: none
+		list-style: none
+	h3
+		font-size: 1.3rem
+		margin-bottom: $padding-sm
+		text-align: center
+		display: block
+		color: rgba($white,0.85)
+		text-transform: uppercase
+		font-family: $open_sans
+	li
+		margin-bottom: $margin-xs
+		transition: 0.6s all
+		&:before
+			margin-right: $margin-sm
+		&:hover
+			margin-left: $padding-sm
+			color: $white
+		a:hover
+			border-bottom: 1px dotted $gray
+#copyright
+	background-color: darken($dark_gray2,6%)
+	border-top: 1px solid darken($dark_gray2,8%)
+	background: linear-gradient(darken($dark_gray2,5%),darken($dark_gray2,12%))
+	display: block
+	color: rgba($white,1)
+	a
+		text-decoration: none
+		color: rgba($white,1)
+		font-weight: normal
+		border-bottom: 1px dotted $gray
+		cursor: pointer
+	#copy,
+	.sociales
+		transition: 0.3s all
+		text-align: center
+		display: block
+		padding: $padding-xs
+		width: 100%
+		float: left
+		font-size: 1.1rem
+	.sociales a
+		color: $white
+		text-decoration: none
+		cursor: pointer
+		border-bottom: none
+		margin-right: $margin-sm

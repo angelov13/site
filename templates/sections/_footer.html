@@ -1,0 +1,36 @@
+{% macro footer(widgets,servicios,site) %}
+	<footer id="footer">
+		<div id="widgets">
+			<div class="container-lg">
+				<div id="nosotros">
+					<h3>{{ widgets.title1 }}</h3>
+					<p>{{ widgets.body1 }}</p>
+				</div>
+				<div id="porque-nosotros">
+					<h3>{{ widgets.title2 }}</h3>
+					<p>{{ widgets.body2 }}</p>
+				</div>
+				<div id="servicios">
+					<h3>{{ widgets.title3 }}</h3>
+					<ul>
+					{% for servicio in servicios %}
+						<li class="icon-circle-right"><a href="{{ servicio.url }}">{{ servicio.text }}</a></li>
+					{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			<div class="container-lg">
+				<div id="copy"> Copyright <a href="{{ site.url }}">{{ site.name }}</a> {{ site.year }} &copy;
+				</div>
+				<div class="sociales">
+					<a href="{{ site.facebook }}"><span class="icon-facebook"></span></a>
+					<a href="{{ site.twitter }}"><span class="icon-twitter"></span></a>
+					<a href="{{ site.google }}"><span class="icon-google-plus"></span></a>
+					<a href="{{ site.youtube }}"><span class="icon-youtube2"></span></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endmacro %}

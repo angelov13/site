@@ -1,0 +1,1 @@
+function mostrar(){menu.classList.toggle("mostrar")}var toggleMenu=document.getElementById("toggle-menu"),menu=document.getElementById("menu");toggleMenu.addEventListener("click",mostrar,!1);
