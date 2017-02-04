@@ -91,6 +91,7 @@ ENV/
 .ropeproject
 
 #archivos a excluir
+lunaprogrammers/*
 bin/*.*
 bin/
 bin/*
