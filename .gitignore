@@ -106,6 +106,8 @@ lib/
 include/*.*
 include/*
 include/
+scripts/
+scripts/*
 tmp/*.*
 tmp/*
 tmp/
