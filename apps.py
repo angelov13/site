@@ -11,6 +11,7 @@ blog.config.from_object(BlogDev)
 from views import *
 from models import db
 
+
 # Iniciando Servidor
 if __name__ == '__main__':
 	db.init_app(blog)

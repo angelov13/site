@@ -89,6 +89,8 @@ class Articles(db.Model):
 	title_post = db.Column(db.String(100),unique=True,nullable=False)
 	url_post = db.Column(db.String(100),unique=True,nullable=False)
 	description_post = db.Column(db.String(200))
+	meta_keywords = db.Column(db.String(100))
+	image_post = db.Column(db.String(100))
 	content_post = db.Column(db.Text)
 	author_post = db.Column(db.Integer,db.ForeignKey('admins.id_admin'),nullable=False)
 	publish_date = db.Column(db.DateTime)

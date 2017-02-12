@@ -1,0 +1,90 @@
+{% extends '/base/base.html' %}
+
+{% block header %}
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		::selection{
+			background-color: black;
+			color: white;
+		}
+		::-webkit-selection{
+			background-color: black;
+			color: white;
+		}
+		::-moz-selection{
+			background-color: black;
+			color: white;
+		}
+		::-ms-selection{
+			background-color: black;
+			color: white;
+		}
+		::-o-selection{
+			background-color: black;
+			color: white;
+		}
+		body{
+			background-color: black;
+			font-size: 16px;
+		}
+		div{
+			position: absolute;
+			display: block;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+			width: 100%;
+			text-align: center;
+		}
+		h1,h2,h3,h4,h5,h6{
+			margin: 0.5rem auto;
+			display: block;
+			color: red;
+			font-size: 4.5rem;
+			font-family: 'Play',arial, sans-serif;
+		}
+		p{
+			margin: 0 auto;
+			font-size: 2.2rem;
+			display: block;
+			color: gray;
+			font-family: 'Open Sans',arial, sans-serif;
+		}
+		a{
+			text-decoration: none;
+			color: red;
+			font-size: 1.6rem;
+			margin: 1rem 0.6rem;
+			font-family: 'Open Sans',arial, sans-serif;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+	</style>	
+{% endblock %}
+
+{% block body %}
+<div>
+	<h2>{{ g.page['title'] }}</h2>
+	<iframe width="500" height="310" src="https://www.youtube.com/embed/6ktnrKG8uq4?rel=0&amp;autoplay=1&amp;autohide=1&amp;loop=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	<p>{{ g.page['description'] }}</p>
+	<a id="back" href="javascript:void(0);">Regresar</a>
+	<a href="{{ g.site['url'] }}">Ir al Inicio</a>
+</div>
+{% endblock %}
+{% block footer %}
+	<script>
+		back = document.getElementById('back');
+		back.addEventListener('click',function(){
+			window.history.go(-1);
+		},false);
+	</script>
+{% endblock %}

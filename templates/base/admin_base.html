@@ -1,11 +1,8 @@
 {% from 'modules/_meta.html' import metaTags %}
-{% from 'modules/_analytics.html' import analytics %}
-{% from 'modules/_fonts.html' import fonts %}
+
 <!DOCTYPE html>
 <html lang="{{ g.site['lang'] }}">
 <head>
-	{{ metaTags() }}
-	{# {{ fonts() }} #}
 	{% block header %}
 	{% endblock %}
 </head>
@@ -16,7 +13,6 @@
 
 	{% block footer %}
 	{% endblock %}
-	{# {{ analytics() }} #}
-	
+
 </body>
 </html>
