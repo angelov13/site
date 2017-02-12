@@ -4,8 +4,8 @@ db = SQLAlchemy()
 
 class Admin_groups(db.Model):
 	__tablename__ = 'admin_groups'
-	id_group = db.Column(db.Integer,primary_key=True,nullable=False)
-	name_group = db.Column(db.String(30),unique=True,nullable=False)
+	id_group = db.Column(db.Integer,primary_key=True,nullable=False,index=True)
+	name_group = db.Column(db.String(30),unique=True,nullable=False,index=True)
 	admins = db.relationship('Admin', backref='admin_groups', lazy='dynamic')
 	write_articles = db.Column(db.Boolean,default=False)
 	edit_articles = db.Column(db.Boolean,default=False)
@@ -39,11 +39,11 @@ class Admin_groups(db.Model):
 
 class Admin(db.Model):
 	__tablename__ = 'admins'
-	id_admin = db.Column(db.Integer,primary_key=True,nullable=False)
-	nick_name_admin = db.Column(db.String(30),unique=True,nullable=False)
+	id_admin = db.Column(db.Integer,primary_key=True,nullable=False,index=True)
+	nick_name_admin = db.Column(db.String(30),unique=True,nullable=False,index=True)
 	name_admin = db.Column(db.String(30),nullable=False)
 	last_name_admin = db.Column(db.String(30))
-	mail_admin = db.Column(db.String(55),unique=True,nullable=False)
+	mail_admin = db.Column(db.String(55),unique=True,nullable=False,index=True)
 	password_admin = db.Column(db.String(128),nullable=False)
 	state_admin = db.Column(db.String(20),nullable=False)
 	admin_group = db.Column(db.Integer, db.ForeignKey('admin_groups.id_group'),nullable=False)
@@ -68,7 +68,7 @@ class Users(db.Model):
 	nick_name_user = db.Column(db.String(30),unique=True,nullable=False)
 	name_user = db.Column(db.String(30))
 	last_name_user = db.Column(db.String(30))
-	mail_user = db.Column(db.String(55),unique=True,nullable=False)
+	mail_user = db.Column(db.String(55),unique=True,nullable=False,index=True)
 	state_user = db.Column(db.String(20))
 
 	def __init__(self,nick_name_user,name_user,last_name_user,mail_user,state_user):

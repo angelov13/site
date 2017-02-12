@@ -1,5 +1,109 @@
-{% extends '/base/base.html' %}
+{% extends '/base/admin_base.html' %}
+
+{% block header %}
+{% endblock %}
 
 {% block body %}
-	<h1>Dashboard</h1>
+
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Usuarios</a></li>
+				<li><a href="#">Ajustes</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Salir</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<h4>Crear Administrador</h4>
+			<form action="/hack/admin/add" method="POST">
+				<div class="form-group">
+					<input class="form-control" name="nick_name" type="text" placeholder="usuario">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="name" type="text" placeholder="nombre">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="last_name" type="text" placeholder="apellido">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="email" type="text" placeholder="correo">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="password" type="password" placeholder="password">
+				</div>
+				<div class="form-group">
+					<select class="form-control" name="state" id="state">
+					{% for state in g.states %}
+						<option value="{{ state }}">{{ state }}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<select class="form-control" name="admin_group" id="admin_group">
+						{% for group in g.admin_groups %}
+							<option value="{{ group.id_group }}">{{ group.name_group }}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<input class="btn btn-success btn-block btn-lg" type="submit" value="crear">
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<h4>Crear grupo de Administradores</h4>
+			<form action="/hack/group/add" method="POST">
+				<div class="form-group">
+					<input class="form-control" name="nick_name" type="text" placeholder="usuario">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="name" type="text" placeholder="nombre">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="last_name" type="text" placeholder="apellido">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="email" type="text" placeholder="correo">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="password" type="password" placeholder="password">
+				</div>
+				<div class="form-group">
+					<select class="form-control" name="state" id="state">
+					{% for state in g.states %}
+						<option value="{{ state }}">{{ state }}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<select class="form-control" name="admin_group" id="admin_group">
+						{% for group in g.admin_groups %}
+							<option value="{{ group.id_group }}">{{ group.name_group }}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<input class="btn btn-success btn-block btn-lg" type="submit" value="crear">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 {% endblock %}

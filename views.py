@@ -9,35 +9,41 @@ from flask import request
 from flask import g
 from flask import abort
 from flask import send_from_directory
-from models import db,Options
-from functions import getInfoSite,getErrorInfo
+
+from functions import *
 
 #=====================================
 #		RUTAS DEL SERVIDOR	
 #=====================================
 
-@blog.route('/login', methods = ['GET','POST'])
+@blog.route('/hack', methods = ['GET'])
 def index():
-	
+	g.site = getInfoSite()
+	g.admin_groups = getGroupAdmins()
+	g.states = getStatesAdmins()
+	g.page = {
+		'title': 'Escritorio'
+	}
 	return render_template('admin/dashboard.html')
 
-#=============================
-# 		Redirecciones
-#=============================
 
-@blog.route('/administration/')
-@blog.route('/administration')
-@blog.route('/administrator/')
-@blog.route('/administrator')
-@blog.route('/dashboard/')
-@blog.route('/dashboard')
-@blog.route('/wp-admin/')
-@blog.route('/wp-admin')
-@blog.route('/admin/')
-@blog.route('/admin')
-def admin():
-	abort(403)
-	return 403
+@blog.route('/hack/admin/add',methods = ['GET','POST'])
+def adminAdd():
+	if request.method == 'POST':
+		user=request.form
+		nick_name = str(user.get('nick_name'))
+		name = str(user.get('name'))
+		last_name = str(user.get('last_name'))
+		email = str(user.get('email'))
+		password = str(user.get('password'))
+		state = str(user.get('state'))
+		id_group = str(user.get('admin_group'))
+
+		new_admin = Admin(nick_name,name,last_name,email,password,state,id_group)
+
+		db.session.add(new_admin)
+		db.session.commit()
+	return redirect('/hack')
 
 
 #=============================
@@ -87,19 +93,37 @@ def config(option,value):
 		db.session.commit()
 		return 'Configuración guardada correctamente'
 
+#=================================
+#         Redirecciones
+#=================================
 
-#=============================
-# 	Archivos estaticos
-#=============================
+@blog.route('/administration/')
+@blog.route('/administration')
+@blog.route('/administrator/')
+@blog.route('/administrator')
+@blog.route('/dashboard/')
+@blog.route('/dashboard')
+@blog.route('/wp-admin/')
+@blog.route('/wp-admin')
+@blog.route('/admin/')
+@blog.route('/admin')
+def admin():
+	abort(403)
+	return 403
+
+
+#==================================
+#   Sirviendo Archivos estaticos
+#==================================
 
 @blog.route('/robots.txt')
 def robots():
 	return send_from_directory(blog.static_folder,'robots.txt')
 
 
-#=============================
-# 		ERRORES DE SERVIDOR	
-#=============================
+#==================================
+#       ERRORES DE SERVIDOR
+#==================================
 
 @blog.errorhandler(400)
 @blog.errorhandler(403)

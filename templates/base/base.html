@@ -1,8 +1,8 @@
-{% from 'modules/_meta.html' import metaTags %}
-{% from 'modules/_analytics.html' import analytics %}
-{% from 'modules/_fonts.html' import fonts %}
+{% from '/blog/modules/_meta.html' import metaTags %}
+{% from '/blog/modules/_analytics.html' import analytics %}
+{% from '/blog/modules/_fonts.html' import fonts %}
 <!DOCTYPE html>
-<html lang="{{ g.site['lang'] }}">
+<html lang="{{ g.site.lang }}">
 <head>
 	{{ metaTags() }}
 	{# {{ fonts() }} #}

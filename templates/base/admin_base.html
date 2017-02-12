@@ -1,10 +1,14 @@
-{% from 'modules/_meta.html' import metaTags %}
+{% from '/admin/modules/_meta.html' import metaTags %}
+{% from '/admin/modules/_links_footer.html' import links_f %}
+{% from '/admin/modules/_links_header.html' import links_h %}
 
 <!DOCTYPE html>
-<html lang="{{ g.site['lang'] }}">
+<html lang="{{ g.site.lang }}">
 <head>
+	{{ metaTags() }}
 	{% block header %}
 	{% endblock %}
+	{{ links_h() }}
 </head>
 <body>
 
@@ -13,6 +17,6 @@
 
 	{% block footer %}
 	{% endblock %}
-
+	{{ links_f() }}
 </body>
 </html>
